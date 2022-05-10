@@ -1,2 +1,2 @@
 # email_template
-Sample email template
+Sample email template using mjml
