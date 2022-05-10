@@ -4,43 +4,79 @@
       <!-- Css class styles. -->
     </mj-raw>
     <mj-style>
-      .header-text {
-        border: 4px solid #ffffff;
-      }
-
-      .divider-container {
-        border: 1px solid #000000;
+      .bg-style {
+        background-image: url(https://photos.smugmug.com/Stock-Images/Background-Images/i-wcQwrX2/0/cc0fffd9/X2/sample-email-bg-X2.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding: 0px;
       }
     </mj-style>
   </mj-head>
 
-  <mj-body background-color="#f1f1f1">
-    <mc-section background-color="#000000" padding="40px">
+  <mj-body css-class="bg-style" background-color="#f1f1f1">
+    <mc-section background-color="#f0ebe1" padding="40px">
       <mj-raw>
         <!--Header-->
       </mj-raw>
       <mj-column width="100%">
-        <mc-text mc:edit="title" css-class="header-text" font-size="57px" font-family="Helvetica" color="#ffffff" font-weight="bold" padding="20px">
-          Company Logo Here
-        </mc-text>
+        <mc-image padding="20px" mc:edit="logoimg" src="https://photos.smugmug.com/Sanctus-Staff/Sanctus-Brand/Logos/Colour/Digital/i-RGgXrS4/0/d5f67e64/X2/sanctus-church-logo-rgb-X2.png" />
       </mj-column>
     </mc-section>
-
-    <mc-section css-class="divider-container" background-color="#ffffff" padding="40px">
+    <mj-wrapper css-class="divider-container" background-color="#ffffff" padding="40px">
       <mj-raw>
         <!--Body Section-->
       </mj-raw>
-      <mj-column width="100%">
-        <mc-text mc:edit="date" text-transform="uppercase" font-size="14px" font-family="Helvetica" padding-left="0px" color="#ffffff" font-weight="bold" padding="20px">
-          *|DATE:M d,Y!*
-        </mc-text>
-      </mj-column>
-    </mc-section>
+      <mc-section>
+        <mj-column width="100%">
+          <mc-text mc:edit="date" text-transform="uppercase" font-size="16px" font-family="Helvetica" padding-left="0px" color="#000000" font-weight="bold" padding="10px">
+            *|DATE:M d,Y|*
+          </mc-text>
+        </mj-column>
+      </mc-section>
+      <mc-section>
+        <mj-column>
+          <mc-text mc:edit="salutations-label" font-size="14px" font-family="Helvetica" padding-left="0px" color="#000000" padding="20px">
+            Hi *|IF:FNAME|**|FNAME|*,*|ELSE:|* Friend,*|END:IF|*
+          </mc-text>
+          <mc-text mc:edit="salutations-label" font-size="14px" font-family="Helvetica" padding-left="0px" color="#000000" padding="20px">
+            Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat. Proin eget tortor risus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
+          </mc-text>
+        </mj-column>
+      </mc-section>
+    </mj-wrapper>
 
-    <mc-section>
+    <mc-section background-color="#f0ebe1">
+      <mj-raw>
+        <!--Footer Section-->
+      </mj-raw>
       <mj-column width="100%">
-        <mc-text mc:edit="date" font-size="57px" font-family="Helvetica" color="#ffffff" font-weight="bold" padding="20px">
-          Company Logo Here
+        <mc-text mc:edit="social-label" font-size="16px" font-family="Helvetica" font-weight="bold" padding-left="40px" padding-top="10px">
+          Find Us:
+        </mc-text>
+        <mj-social mode="horizontal" font-size="15px" icon-size="35px" padding-bottom="30px">
+          <mj-social-element name="facebook-noshare" href="https://www.facebook.com/sanctuschurch19" />
+          <mj-social-element name="instagram-noshare" href="https://www.instagram.com/sanctuschurch" />
+          <mj-social-element name="web-noshare" href="https://www.sanctuschurch.com" />
+        </mj-social>
+        <mj-divider />
+        <mc-text mc:edit="social-label" align="center" font-style="italic" font-size="12px" font-family="Helvetica" font-weight="bold" padding="0px" padding-top="20px">
+          Copywrite © *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.
+        </mc-text>
+        <mc-text mc:edit="social-label" align="center" font-style="italic" font-size="12px" font-family="Helvetica" font-weight="bold" padding="0px" padding-top="20px">
+          Our mailing address is: *|HTML:LIST_ADDRESS_HTML|* *|END:IF|*
+        </mc-text>
+        <mc-text mc:edit="social-label" align="center" font-style="italic" font-size="12px" font-family="Helvetica" font-weight="bold" padding="0px" padding-top="20px">
+          *|HTML:LIST_ADDRESS_HTML|* *|END:IF|*
+        </mc-text>
+        <mc-text mc:edit="social-label" align="center" font-style="italic" font-size="12px" font-family="Helvetica" font-weight="bold" padding="0px" padding-top="20px">
+          Want to change how you receive these emails?
+        </mc-text>
+        <mc-text mc:edit="social-label" align="center" font-style="italic" font-size="12px" font-family="Helvetica" font-weight="bold" padding="0px" padding-top="20px">
+          You can update your preferences or unsubscribe from this list.
+        </mc-text>
+        <mc-text mc:edit="social-label" align="center" font-style="italic" font-size="12px" font-family="Helvetica" font-weight="bold" padding="0px" padding-top="20px">
+          *|IF:REWARDS|* *|HTML:REWARDS|* *|END:IF|*
         </mc-text>
       </mj-column>
     </mc-section>
